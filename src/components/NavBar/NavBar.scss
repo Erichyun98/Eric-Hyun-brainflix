@@ -1,0 +1,72 @@
+.nav { 
+    color: white;
+    padding: 1rem;
+
+    &__logo { 
+        display: block;
+        margin: auto;
+        height: 1.56rem;
+        width: 7.5rem;
+    }
+
+    &__form { 
+        width: 85%;
+    }
+
+    // &__input {
+    //     height: 2.5rem;
+    //     border: 0.0625rem solid #E1E1E1;
+    //     border-radius: 0.25rem;
+    //     width: 100%;
+    //     background-image: url("../../assets/icons/search.svg");
+    //     background-repeat: no-repeat;
+    //     background-position: 0.6rem;
+    //     padding-left: 2.5rem; 
+    // }
+
+    &__subcontents { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    &__avatar { 
+        height:2.25rem;
+        width: 2.25rem;
+        border-radius: 50%;
+    }
+
+    &__button { 
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 2.5rem;
+        margin-top: 1rem;
+        border-radius: 0.25rem;
+        background-color: #0095FF;
+        color: white;
+        border: none;
+    }
+
+    &__button-icon { 
+        width: 42%;
+        text-align: left;
+    }
+
+    &__button-description { 
+        width: 50%;
+        text-align: left;
+    }
+}
+
+#navinput { 
+    height: 2.5rem;
+        border: 0.0625rem solid #E1E1E1;
+        border-radius: 0.25rem;
+        width: 100%;
+        background-image: url("../../assets/icons/search.svg");
+        background-repeat: no-repeat;
+        background-position: 0.6rem;
+        padding-left: 2.5rem; 
+}
