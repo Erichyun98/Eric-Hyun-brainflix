@@ -12,18 +12,15 @@ function NavBar() {
                 <img className='nav__logo' src = {logo} />
             </a>
             <div className='nav__contents'>
-                <div className='nav__subcontents'>
-                    <form className='nav__form' action='' method=''>    
-                        <input className='nav__input' id='navinput' type='search' placeholder='Search' name='search'htmlFor=''>
-                        </input>
-                    </form>  
+                <div className='nav__subcontents'>  
+                    <input className='nav__input' type='search' placeholder='Search' name='search'htmlFor=''></input>
                     <img className='nav__avatar' src = {pic} /> 
                 </div>
                 <button className='nav__button' type='button'>
-                    <span className='nav__button-icon'>
+                    <div className='nav__button-icon'>
                         <img src = {upload}/>
-                    </span>    
-                    <span className='nav__button-description'>UPLOAD</span>
+                    </div>    
+                    <p className='nav__button-description'>UPLOAD</p>
                 </button>
             </div>
         </nav>
