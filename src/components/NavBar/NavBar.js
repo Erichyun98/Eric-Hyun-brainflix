@@ -3,10 +3,10 @@ import '../../styles/partials/_global.scss'
 import logo from '../../assets/images/BrainFlix-logo.svg';
 import pic from '../../assets/images/Mohan-muruge.jpg';
 import upload from '../../assets/icons/upload.svg';
+
 function NavBar() {
 
-  return (
-    <>
+    return (
         <nav className='nav'>
             <a className='nav__link' href ="/">
                 <img className='nav__logo' src = {logo} />
@@ -24,8 +24,7 @@ function NavBar() {
                 </button>
             </div>
         </nav>
-    </>
-  )
+    )
 }
 
 export default NavBar
