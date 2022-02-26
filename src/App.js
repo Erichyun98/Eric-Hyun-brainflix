@@ -2,9 +2,10 @@ import { Component } from 'react';
 import './App.scss';
 import NavBar from './components/NavBar/NavBar.js';
 import VideoMain from './components/VideoMain/VideoMain.js';
-import VideoDetail from './components/VideoDetail/VideoDetail.js'
-import videosListJSON from './data/videos.json'
-import detailVideoJSON  from './data/video-details.json'
+import VideoDetail from './components/VideoDetail/VideoDetail.js';
+import CommentForm from './components/CommentForm/CommentForm.js';
+import videosListJSON from './data/videos.json';
+import detailVideoJSON  from './data/video-details.json';
 
 class App extends Component {
   state = {
@@ -16,7 +17,6 @@ class App extends Component {
   render() {
     const {videoList, detailVideo, currentlySelectedVideo} = this.state
 
-    
     return (
       <>
         <NavBar />
@@ -32,6 +32,7 @@ class App extends Component {
             likes={currentlySelectedVideo.likes}
             description={currentlySelectedVideo.description}
             />
+          <CommentForm />
         </main>
       </>
     );

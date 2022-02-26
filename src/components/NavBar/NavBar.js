@@ -1,5 +1,5 @@
 import './NavBar.scss';
-import '../../styles/partials/_global.scss'
+import '../../styles/partials/_global.scss';
 import logo from '../../assets/images/BrainFlix-logo.svg';
 import pic from '../../assets/images/Mohan-muruge.jpg';
 import upload from '../../assets/icons/upload.svg';

@@ -1,0 +1,64 @@
+.comment { 
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    &__section { 
+        display: flex;
+    }
+
+    &__form { 
+        width: 100%;
+        padding-left: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__id { 
+        display: block;
+    }
+
+    &__image { 
+        height:2.25rem;
+        width: 2.25rem;
+        border-radius: 50%;
+        margin-top: 1.5rem;
+    }
+
+    &__box { 
+        width: 100%;
+        height: 5rem;
+        resize: none;
+        border-radius: 0.25rem;
+        margin-top: 0.25rem;
+        margin-bottom: 1rem;
+        padding: 0.75rem;
+        
+    }
+
+    &__button {
+        display: block;
+        width: 100%;
+        height: 2.5rem;
+        background-color: #0095FF;
+        border: none;
+        border-radius: 0.25rem;
+    }
+
+    &__button-container { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    &__button-icon { 
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+
+    &__button-description { 
+        color: #FFFFFF;
+        font-size: 0.75rem;
+        width: 100%;
+        margin-bottom: 1rem;
+        margin-left: -1rem;
+    }
+}

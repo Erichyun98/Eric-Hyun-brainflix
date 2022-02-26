@@ -1,6 +1,6 @@
-import './VideoDetail.scss'
-import searchicon from '../../assets/icons/search.svg'
-import likeicon from '../../assets/icons/search.svg'
+import './VideoDetail.scss';
+// import searchicon from '../../assets/icons/search.svg';
+// import likeicon from '../../assets/icons/search.svg';
 
 const VideoDetail = ({title,channel,views,date,likes,description}) => {
     
