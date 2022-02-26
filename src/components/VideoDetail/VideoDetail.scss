@@ -1,0 +1,45 @@
+.info { 
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+
+    &__title { 
+        margin-top: 0;
+    }
+
+    &__subinfo { 
+        display: flex;
+        border-top: 0.0625rem solid #E1E1E1;
+        border-bottom: 0.0625rem solid #E1E1E1;
+    }
+
+    &__channel-box { 
+        padding-left: 0;
+        width: 50%;
+    }
+
+    &__channels { 
+        list-style: none;
+        margin-bottom: 1rem;
+    }
+
+    &__date { 
+        list-style: none;
+    }
+
+    &__view-box { 
+        width: 50%;
+    }
+
+    &__views { 
+        list-style-image: url('../../assets/icons/views.svg');
+        margin-bottom: 1rem;
+    }
+
+    &__likes { 
+        list-style-image: url('../../assets/icons/likes.svg');
+        margin-left: -0.3rem;
+        
+     
+    }
+}
