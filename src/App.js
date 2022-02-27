@@ -3,8 +3,9 @@ import './App.scss';
 import NavBar from './components/NavBar/NavBar.js';
 import VideoMain from './components/VideoMain/VideoMain.js';
 import VideoDetail from './components/VideoDetail/VideoDetail.js';
+import CommentList from './components/CommentList/CommentList.js';
 import CommentForm from './components/CommentForm/CommentForm.js';
-import CurrentComment from './components/CurrentComment/CurrentComment.js';
+// import CurrentComment from './components/CurrentComment/CurrentComment.js';
 import videosListJSON from './data/videos.json';
 import detailVideoJSON  from './data/video-details.json';
 
@@ -14,7 +15,7 @@ class App extends Component {
     detailVideo: detailVideoJSON,
     currentlySelectedVideo: detailVideoJSON[0],
   };
-
+ 
   render() {
     const {videoList, detailVideo, currentlySelectedVideo} = this.state
 
@@ -34,8 +35,8 @@ class App extends Component {
             description={currentlySelectedVideo.description}
             />
           <CommentForm />
-          <CurrentComment
-          comment={currentlySelectedVideo.comments}
+          <CommentList
+          comments={currentlySelectedVideo.comments} 
           />
         </main>
       </>

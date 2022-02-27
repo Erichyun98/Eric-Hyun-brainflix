@@ -2,11 +2,15 @@ import './CommentForm.scss';
 import pic from '../../assets/images/Mohan-muruge.jpg';
 import addComment from '../../assets/icons/add_comment.svg';
 
-const CommentForm = () => { 
+const CommentForm = ({comments}) => { 
+    let commentCounter = [0]
     return (
         <section className="comment">
         <div class="comment__submit">
-            <p className='comment__count'> Comments</p>
+            {comments.forEach(comment =>{
+                commentCounter++
+            })}
+            <p className='comment__count'>{commentCounter} Comments</p>
             <div className="comment__section"> 
                 <img className="comment__image" src={pic}/>
                 <form className= "comment__form" action="" method="">
