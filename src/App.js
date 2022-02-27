@@ -4,6 +4,7 @@ import NavBar from './components/NavBar/NavBar.js';
 import VideoMain from './components/VideoMain/VideoMain.js';
 import VideoDetail from './components/VideoDetail/VideoDetail.js';
 import CommentForm from './components/CommentForm/CommentForm.js';
+import CurrentComment from './components/CurrentComment/CurrentComment.js';
 import videosListJSON from './data/videos.json';
 import detailVideoJSON  from './data/video-details.json';
 
@@ -33,6 +34,9 @@ class App extends Component {
             description={currentlySelectedVideo.description}
             />
           <CommentForm />
+          <CurrentComment
+          comment={currentlySelectedVideo.comments}
+          />
         </main>
       </>
     );
