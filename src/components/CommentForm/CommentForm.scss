@@ -1,0 +1,127 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+
+.comment { 
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include tablet { 
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    @include desktop { 
+        padding-left: 10rem;
+    }
+
+    &__count { 
+        color: $color-primary;
+        font-weight: 700;
+
+        @include desktop { 
+            margin-top: 3rem;
+        }
+    }
+
+    &__section { 
+        display: flex;
+    }
+
+    &__form { 
+        width: 100%;
+        padding-left: 1rem;
+        margin-bottom: 1rem;
+
+        @include desktop { 
+            padding-left: 2rem;
+        }
+    }
+
+    &__id { 
+        display: block;
+        font-weight: 700;
+        color: $color-primary3;
+    }
+
+    &__image { 
+        height:2.25rem;
+        width: 2.25rem;
+        border-radius: 50%;
+        margin-top: 1.5rem;
+
+        @include tablet { 
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+    }
+
+    &__holder {
+        @include tablet { 
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__box { 
+        font-size: 1rem;
+        color: $color-primary;
+        width: 100%;
+        height: 5rem;
+        resize: none;
+        border-radius: 0.25rem;
+        margin-top: 0.25rem;
+        margin-bottom: 1rem;
+        padding: 0.75rem;
+
+        @include tablet { 
+            height: 2.5rem;
+            resize:none;
+            width: 75%;
+        }
+
+        @include desktop { 
+            width: 73%;
+        }
+    }
+
+    &__button {
+        display: block;
+        width: 100%;
+        height: 2.5rem;
+        background-color: #0095FF;
+        border: none;
+        border-radius: 0.25rem;
+
+        @include tablet { 
+            width: 9.375rem;
+        }
+    }
+
+    &__button:hover{
+        background-color: $color-secondary2;
+    }
+
+    &__button-container { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    &__button-icon { 
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+
+    &__button-description { 
+        color: #FFFFFF;
+        font-weight: 700;
+        font-size: 0.75rem;
+        width: 100%;
+        margin-bottom: 1rem;
+        margin-left: -1rem;
+
+        @include tablet { 
+            margin-left: 0;
+        }
+    }
+}

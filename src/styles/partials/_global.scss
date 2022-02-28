@@ -1,0 +1,15 @@
+@use "./typography" as *; 
+
+* {
+    box-sizing: border-box;
+}
+
+html { 
+    font-size: $root-font-size;
+    font-family: $font-stack;
+    line-height: 14px; 
+}
+
+body { 
+    margin: 0;
+}
