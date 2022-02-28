@@ -1,0 +1,14 @@
+@use './styles/partials/colors' as *;
+@use './styles/partials/mixins' as *;
+
+.subcontent { 
+    @include desktop { 
+        display: flex;
+    }
+
+    &__divider { 
+        @include desktop {
+        border-right: 0.0625rem solid $color-secondary3;
+        }
+    }
+}

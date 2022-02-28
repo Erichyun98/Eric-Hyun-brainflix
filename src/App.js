@@ -33,31 +33,31 @@ class App extends Component {
     return (
       <>
         <NavBar />
-        <main className='main'>
           <VideoMain
             poster={currentlySelectedVideo.image}
             />
-          <VideoDetail
-            title={currentlySelectedVideo.title}
-            channel={currentlySelectedVideo.channel}
-            views={currentlySelectedVideo.views}
-            date={currentlySelectedVideo.timestamp}
-            likes={currentlySelectedVideo.likes}
-            description={currentlySelectedVideo.description}
+        <section className='subcontent'>
+          <div className='subcontent__divider'>
+            <VideoDetail
+              title={currentlySelectedVideo.title}
+              channel={currentlySelectedVideo.channel}
+              views={currentlySelectedVideo.views}
+              date={currentlySelectedVideo.timestamp}
+              likes={currentlySelectedVideo.likes}
+              description={currentlySelectedVideo.description}
+              />
+            <CommentForm />
+            <CommentList
+              comments={currentlySelectedVideo.comments} 
             />
-          <CommentForm />
-          <CommentList
-            comments={currentlySelectedVideo.comments} 
-          />
-        </main>
-        <aside>
-          <VideoListing 
-            videos={filteredVideo} 
-            clickHandler= {this.updateCurrentVideo}
-           />
-        </aside>
-        
-
+          </div>
+          <aside>
+            <VideoListing 
+              videos={filteredVideo} 
+              clickHandler= {this.updateCurrentVideo}
+            />
+          </aside>
+        </section>
       </>
     )
   }

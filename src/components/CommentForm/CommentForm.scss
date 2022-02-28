@@ -10,9 +10,17 @@
         padding-right: 1.5rem;
     }
 
+    @include desktop { 
+        padding-left: 10rem;
+    }
+
     &__count { 
         color: $color-primary;
         font-weight: 700;
+
+        @include desktop { 
+            margin-top: 3rem;
+        }
     }
 
     &__section { 
@@ -23,11 +31,10 @@
         width: 100%;
         padding-left: 1rem;
         margin-bottom: 1rem;
-    }
 
-    &__box { 
-        font-size: 1rem;
-        color: $color-primary
+        @include desktop { 
+            padding-left: 2rem;
+        }
     }
 
     &__id { 
@@ -41,6 +48,11 @@
         width: 2.25rem;
         border-radius: 50%;
         margin-top: 1.5rem;
+
+        @include tablet { 
+            height: 2.5rem;
+            width: 2.5rem;
+        }
     }
 
     &__holder {
@@ -51,6 +63,8 @@
     }
 
     &__box { 
+        font-size: 1rem;
+        color: $color-primary;
         width: 100%;
         height: 5rem;
         resize: none;
@@ -63,6 +77,10 @@
             height: 2.5rem;
             resize:none;
             width: 75%;
+        }
+
+        @include desktop { 
+            width: 73%;
         }
     }
 
