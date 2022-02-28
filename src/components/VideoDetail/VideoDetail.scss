@@ -1,45 +1,95 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+
 .info { 
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 1rem;
+    
+    
+    @include tablet { 
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: 1.5rem;
+    }
 
     &__title { 
         margin-top: 0;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        color: $color-primary;
+
+        @include tablet { 
+            font-size: 2.0625rem;
+            margin-bottom: 0;
+        }
     }
 
     &__subinfo { 
         display: flex;
         border-top: 0.0625rem solid #E1E1E1;
         border-bottom: 0.0625rem solid #E1E1E1;
+
+        @include tablet { 
+            border-top: none;
+            align-items: flex-end;
+        }
     }
 
     &__channel-box { 
         padding-left: 0;
         width: 50%;
+
+        @include tablet { 
+            display: flex;
+            margin-bottom: 0;
+        }
     }
 
     &__channels { 
+        font-weight: 700;
         list-style: none;
         margin-bottom: 1rem;
     }
 
     &__date { 
         list-style: none;
+        color: $color-primary3;
+
+        @include tablet { 
+            margin-left: 1.5rem;
+        }
+    }
+
+    &__description { 
+        line-height: 1.25rem;
+        font-size: 0.9375rem;
+        color: $color-primary;
     }
 
     &__view-box { 
         width: 50%;
+
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 0;
+        }
     }
 
     &__views { 
         list-style-image: url('../../assets/icons/views.svg');
         margin-bottom: 1rem;
+        color: $color-primary3;
     }
 
     &__likes { 
         list-style-image: url('../../assets/icons/likes.svg');
         margin-left: -0.3rem;
-        
-     
+        color: $color-primary3;
+
+        @include tablet { 
+            margin-left: 3rem;
+        }
     }
 }

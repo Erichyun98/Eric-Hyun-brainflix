@@ -1,19 +1,14 @@
-// @font-face { 
-//     font-family: 'Avenir'; 
-//     src: url('../assets/fonts/Alternative-files/AvenirNextLTPro.ttf'); 
-// }
+@font-face { 
+    font-family: 'Avenir'; 
+    src: url('../../assets/fonts/Alternative-files/AvenirNextLTPro.ttf'); 
+}
 
-// @font-face { 
-//     font-family: 'Avenir';
-//     src: url('../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf');
-//     font-weight: 700; 
-// }
+@font-face { 
+    font-family: 'Avenir';
+    src: url('../../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf');
+    font-weight: 700; 
+}
 
-// @font-face { 
-//     font-family: 'Avenir';
-//     src: url('../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf');
-//     font-weight: 600; 
-// }
 
-// $font-stack: "Avenir", "aerial";
-// $root-font-size: 16px; 
+$font-stack: "Avenir", "aerial";
+$root-font-size: 16px; 

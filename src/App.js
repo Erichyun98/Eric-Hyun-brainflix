@@ -5,7 +5,7 @@ import VideoMain from './components/VideoMain/VideoMain.js';
 import VideoDetail from './components/VideoDetail/VideoDetail.js';
 import CommentList from './components/CommentList/CommentList.js';
 import CommentForm from './components/CommentForm/CommentForm.js';
-// import CurrentComment from './components/CurrentComment/CurrentComment.js';
+import VideoListing from './components/VideoListing/VideoListing.js';
 import videosListJSON from './data/videos.json';
 import detailVideoJSON  from './data/video-details.json';
 
@@ -15,9 +15,20 @@ class App extends Component {
     detailVideo: detailVideoJSON,
     currentlySelectedVideo: detailVideoJSON[0],
   };
+
+  updateCurrentVideo = (videoId) => {
+    const newVideo = this.state.detailVideo.find((video) => { 
+      return video.id === videoId
+    })
+    this.setState({currentlySelectedVideo: newVideo})
+  }
  
   render() {
-    const {videoList, detailVideo, currentlySelectedVideo} = this.state
+    const {videosList, detailVideo, currentlySelectedVideo} = this.state
+
+    const filteredVideo =videosList.filter((video) => {
+      return video.id != currentlySelectedVideo.id;
+    })
 
     return (
       <>
@@ -36,11 +47,19 @@ class App extends Component {
             />
           <CommentForm />
           <CommentList
-          comments={currentlySelectedVideo.comments} 
+            comments={currentlySelectedVideo.comments} 
           />
         </main>
+        <aside>
+          <VideoListing 
+            videos={filteredVideo} 
+            clickHandler= {this.updateCurrentVideo}
+           />
+        </aside>
+        
+
       </>
-    );
+    )
   }
 }
 
