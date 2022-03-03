@@ -30,6 +30,7 @@
     &__info { 
         display: flex;
         align-items: center;
+        height: 5rem;
 
         @include tablet {
             // margin-bottom: 1rem;

@@ -70,10 +70,7 @@
 
     &__name { 
         font-weight: 700;
-
-        @include desktop { 
-
-        }
+        color: $color-primary;
     }
 
     &__comment { 
