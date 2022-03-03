@@ -11,6 +11,7 @@ function App() {
       <Switch>
         <Route path='/' exact render={() => <Home />} />
         <Route path='/Page' render={() => <Page />} />
+        <Route path='/video/:id' render ={() => <Home />} />
       </Switch>
     </BrowserRouter>
   )
