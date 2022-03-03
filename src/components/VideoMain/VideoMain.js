@@ -5,10 +5,7 @@ const VideoMain = ({poster}) => {
 
     return (
         <section className='current-video'>
-            <video className='current-video__player' width="100%" poster={poster} controls>
-                <source src="#" type="#" />
-                <source src="#" type="#" />
-            </video>
+            <video className='current-video__player' poster={poster} controls />
         </section>
     )
 }

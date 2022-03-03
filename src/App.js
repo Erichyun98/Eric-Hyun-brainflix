@@ -46,7 +46,7 @@ class App extends Component {
               likes={currentlySelectedVideo.likes}
               description={currentlySelectedVideo.description}
               />
-            <CommentForm />
+            <CommentForm comments={currentlySelectedVideo.comments}/>
             <CommentList
               comments={currentlySelectedVideo.comments} 
             />

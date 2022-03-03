@@ -4,11 +4,12 @@ import './VideoDetail.scss';
 
 const VideoDetail = ({title,channel,views,date,likes,description}) => {
     
-    // function formatDate(ts){
-    //     let date = new Date(ts)
-    //     const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
-    //     date = date.toLocaleDateString("en-US", options);
-    // }
+    function formatDate(ts){
+        let date = new Date(ts)
+        const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
+        date = date.toLocaleDateString("en-US", options);
+    }
+    
     return (
         <div className='info'>
             <h2 className='info__title'>{title}</h2>
@@ -26,5 +27,4 @@ const VideoDetail = ({title,channel,views,date,likes,description}) => {
         </div>
     )
 }
-
 export default VideoDetail 

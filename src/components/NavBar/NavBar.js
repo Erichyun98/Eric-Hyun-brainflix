@@ -11,11 +11,9 @@ function NavBar() {
             <a className='nav__link' href ="/">
                 <img className='nav__logo' src = {logo} />
             </a>
-            <div className='nav__contents'>
-                <div className='nav__subcontents'>  
-                    <input className='nav__input' type='search' placeholder='Search' name='search'htmlFor=''></input>
-                    <img className='nav__avatar' src = {pic} /> 
-                </div>
+            <div className='nav__subcontents'>  
+                <input className='nav__input' type='search' placeholder='Search' name='search'htmlFor=''></input>
+                <img className='nav__avatar' src = {pic} /> 
                 <button className='nav__button' type='button'>
                     <div className='nav__button-icon'>
                         <img src = {upload}/>
