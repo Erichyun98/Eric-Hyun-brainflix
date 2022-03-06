@@ -7,18 +7,29 @@ import CommentForm from '../../components/CommentForm/CommentForm.js';
 import VideoListing from '../../components/VideoListing/VideoListing.js';
 import videosListJSON from '../../data/videos.json';
 import detailVideoJSON from '../../data/video-details.json';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import axios from 'axios';
+
+const apikey ="e29626d4-08eb-4643-a573-72879dec609b";
+const apiurl =`https://project-2-api.herokuapp.com/`;
 
 class Home extends Component {
-
-    // const apikey ="e29626d4-08eb-4643-a573-72879dec609b";
-    // const apiurl = `https://project-2-api.herokuapp.com/`;
 
     state = {
         videosList: videosListJSON,
         detailVideo: detailVideoJSON,
         currentlySelectedVideo: detailVideoJSON[0],
+        // videosList: [],
+        // currentlySelectedVideo: {}
     };
+
+    // componentDidMount() {
+    //     axios
+    //     .get(`${apiurl}videos/:id${apikey}`)
+    //     .then((response => {
+    //       console.log(response);
+    //       this.setState({ videosList: response.data })
+    //     }));
+    //   }
 
     updateCurrentVideo = (videoId) => {
         const newVideo = this.state.detailVideo.find((video) => {

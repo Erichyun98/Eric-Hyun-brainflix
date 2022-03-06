@@ -5,14 +5,14 @@ import addComment from '../../assets/icons/add_comment.svg';
 const CommentForm = ({ comments }) => {
     return (
         <section className="comment">
-            <div class="comment__submit">
+            <div className="comment__submit">
                 <p className='comment__count'>{comments.length} Comments</p>
                 <div className="comment__section">
                     <img className="comment__image" src={pic} />
                     <form className="comment__form" action="" method="">
-                        <label className="comment__id" for="comment__comment">Join the Conversation</label>
+                        <label className="comment__id" htmlFor="comment__comment">Join the Conversation</label>
                         <div className='comment__holder'>
-                            <textarea class="comment__box" max="2" id="commentsform-comment" name="comment" placeholder="Add a new comment"></textarea>
+                            <textarea className="comment__box" max="2" id="commentsform-comment" placeholder="Add a new comment"></textarea>
                             <button className='comment__button' type='button'>
                                 <div className='comment__button-container'>
                                     <div className='comment__button-icon-holder'>

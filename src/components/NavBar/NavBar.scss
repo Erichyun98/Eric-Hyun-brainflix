@@ -25,7 +25,6 @@
             display: flex;
             justify-content: flex-end;
             flex-wrap: nowrap;
-            width: 100%;
             align-items: center;
             margin-top: 0;
         }
@@ -89,6 +88,17 @@
     &__button-link {
         text-decoration: none;
         width: 100%;
+
+        @include tablet { 
+            margin-top: 0;
+            width: 9rem;
+            margin-right: 1rem;
+        }
+
+        @include desktop { 
+            width: 10.5rem;
+            margin-right: 2rem;
+        }
     }
 
     &__button { 
@@ -102,14 +112,16 @@
         color: white;
         border: none;
 
+        &:hover { 
+            background-color: $color-secondary2;
+        }
+
         @include tablet { 
             margin-top: 0;
-            width: 9rem;
             margin-right: 1rem;
         }
 
         @include desktop { 
-            width: 10.5rem;
             margin-right: 2rem;
         }
     }
