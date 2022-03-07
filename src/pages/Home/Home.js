@@ -5,60 +5,69 @@ import VideoDetail from '../../components/VideoDetail/VideoDetail.js';
 import CommentList from '../../components/CommentList/CommentList.js';
 import CommentForm from '../../components/CommentForm/CommentForm.js';
 import VideoListing from '../../components/VideoListing/VideoListing.js';
-import videosListJSON from '../../data/videos.json';
-import detailVideoJSON from '../../data/video-details.json';
 import axios from 'axios';
 
-const apikey ="e29626d4-08eb-4643-a573-72879dec609b";
-const apiurl =`https://project-2-api.herokuapp.com/`;
+const apikey = "?api_key=e29626d4-08eb-4643-a573-72879dec609b"
+const apiurl = "https://project-2-api.herokuapp.com/"
 
 class Home extends Component {
 
     state = {
-        videosList: videosListJSON,
-        detailVideo: detailVideoJSON,
-        currentlySelectedVideo: detailVideoJSON[0],
-        // videosList: [],
-        // currentlySelectedVideo: {}
-    };
-
-    // componentDidMount() {
-    //     axios
-    //     .get(`${apiurl}videos/:id${apikey}`)
-    //     .then((response => {
-    //       console.log(response);
-    //       this.setState({ videosList: response.data })
-    //     }));
-    //   }
-
-    updateCurrentVideo = (videoId) => {
-        const newVideo = this.state.detailVideo.find((video) => {
-            return video.id === videoId
-        })
-        this.setState({ currentlySelectedVideo: newVideo })
+        videosList: [],
+        currentlySelectedVideo: null
     }
 
-    render() {
-        const { videosList, detailVideo, currentlySelectedVideo } = this.state
+    componentDidMount = () => {
+        axios
+            .get(`${apiurl}videos${apikey}`)
+            .then(response => {
+                this.setState({
+                    videosList: response.data
+                })
+                const videoId = this.props.match.params.id || response.data[0].id;
+                this.getSelectedVideo(videoId);
+            })
+            .catch(event => console.log("error couldn't process", event))
+    }
 
-        const filteredVideo = videosList.filter((video) => {
-            return video.id != currentlySelectedVideo.id;
-        })
+    componentDidUpdate = (previousProps, prevState ) => {
+        const videoId = this.props.match.params.id || this.state.videosList[0].id
+          if (previousProps.match.params.id !== this.props.match.params.id) {
+              this.getSelectedVideo(videoId);
+          }
+    }
+    getSelectedVideo = (videoId) => {
+        axios
+            .get(`${apiurl}videos/${videoId}${apikey}`)
+            .then(response => {
+                console.log("get selected video worked!", response)
+                this.setState({
+                    currentlySelectedVideo: response.data
+                });
+                console.log(response)
+            }) .catch(e => console.log("error"))
+    };
+
+    render() {
+        const { videosList, currentlySelectedVideo } = this.state;
+
+        const filteredVideo = currentlySelectedVideo ? this.state.videosList.filter(video => video.id !== currentlySelectedVideo.id) : videosList;
+
+        const videoListing = filteredVideo.unshift()
+
+        if (currentlySelectedVideo === null) {
+            return <p>Loading...</p>
+        }
 
         return (
             <>
                 <VideoMain
-                    poster={currentlySelectedVideo.image}
+                    poster={currentlySelectedVideo}
                 />
                 <section className='subcontent'>
                     <div className='subcontent__divider'>
                         <VideoDetail
-                            title={currentlySelectedVideo.title}
-                            channel={currentlySelectedVideo.channel}
-                            views={currentlySelectedVideo.views}
-                            date={currentlySelectedVideo.timestamp}
-                            likes={currentlySelectedVideo.likes}
-                            description={currentlySelectedVideo.description}
+                            currentlySelectedVideo={currentlySelectedVideo}
                         />
                         <CommentForm comments={currentlySelectedVideo.comments} />
                         <CommentList
@@ -68,7 +77,6 @@ class Home extends Component {
                     <aside>
                         <VideoListing
                             videos={filteredVideo}
-                            clickHandler={this.updateCurrentVideo}
                         />
                     </aside>
                 </section>

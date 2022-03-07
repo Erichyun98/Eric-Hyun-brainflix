@@ -9,9 +9,9 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route path='/' exact render={() => <Home />} />
-        <Route path='/Page' render={() => <Page />} />
-        <Route path='/video/:id' render ={() => <Home />} />
+        <Route path='/' exact component = {Home} />
+        <Route path='/Page' component = {Page} />
+        <Route path='/videos/:id' component ={Home} />
       </Switch>
     </BrowserRouter>
   )

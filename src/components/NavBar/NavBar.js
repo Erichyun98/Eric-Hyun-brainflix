@@ -9,9 +9,9 @@ function NavBar() {
 
     return (
         <nav className='nav'>
-            <a className='nav__link' href ="/">
+            <Link to= '/' className='nav__link'>
                 <img className='nav__logo' src = {logo} />
-            </a>
+            </Link>
             <div className='nav__subcontents'>  
                 <input className='nav__input' type='search' placeholder='Search' name='search'htmlFor=''></input>
                 <img className='nav__avatar' src = {pic} /> 

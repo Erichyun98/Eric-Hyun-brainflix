@@ -2,9 +2,11 @@ import './VideoDetail.scss';
 // import searchicon from '../../assets/icons/search.svg';
 // import likeicon from '../../assets/icons/search.svg';
 
-const VideoDetail = ({title,channel,views,date,likes,description}) => {
+const VideoDetail = (props) => {
+
+    const {image, title, channel, timestamp, views, likes, description, duration} = props.currentlySelectedVideo; 
     
-    const newDate = new Date(date);
+    const newDate = new Date(timestamp);
     
     const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
     const formattedDate = new Intl.DateTimeFormat("en-US", options).format(newDate);
