@@ -1,12 +1,16 @@
 import './VideoListing.scss';
+import '../VideoMain/VideoMain';
+import { Link } from "react-router-dom";
 
-function VideoListing ({videos,clickHandler}) { 
+function VideoListing ({videos}) { 
     return (
         <section className='video'>
             <h3 className='video__head'>NEXT VIDEOS</h3>
 
             {videos.map((video) =>{
-                return (<div className='video__info'  onClick={() => {clickHandler(video.id)}}>
+                return (
+                <Link key={video.id} to={`/videos/${video.id}`} className="video__list">
+                    <div className='video__info'>
                         <div className='video__img-holder'>  
                             <img className='video__img' src={video.image} alt={video.name}/>
                         </div>
@@ -14,7 +18,8 @@ function VideoListing ({videos,clickHandler}) {
                             <h4 className='video__title'>{video.title}</h4>
                             <p className='video__channel'>{video.channel}</p>
                         </div>
-                        </div>
+                    </div>
+                </Link>
             )})}
 
         </section>

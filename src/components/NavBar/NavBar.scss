@@ -1,70 +1,142 @@
-.nav { 
-    color: white;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+
+.nav {
     padding: 1rem;
+    width: 100%;
+    
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem 1rem 1.5rem;
+    }
+
+    @include desktop { 
+        padding-left: 10rem;
+    }
+
+    &__subcontents { 
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include tablet { 
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
+            align-items: center;
+            margin-top: 0;
+        }
+    }
 
     &__logo { 
         display: block;
         margin: auto;
-        height: 1.56rem;
+        height: 1.5rem;
         width: 7.5rem;
     }
 
+    &__avatar {
+        height: 2.25rem;
+        width: 2.25rem;
+        border-radius: 50%;
+        margin-bottom: -0.8rem;
+
+        @include tablet { 
+            margin-bottom: 0;
+            order: 3;
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+    }
+
     &__input {
+        width: 80%;
         height: 2.5rem;
-        border: 0.0625rem solid #E1E1E1;
+        border: 0.0625rem solid $color-secondary3;
         border-radius: 0.25rem;
-        width: 100%;
         background-image: url("../../assets/icons/search.svg");
         background-repeat: no-repeat;
         background-position: 0.6rem;
         padding-left: 2.5rem; 
         margin-right: 1rem;
+        background-color: $color-secondary4;
+
+        &::placeholder {
+            color: $color-primary;
+            font-size: 12px;
+        }
+
+        &:focus { 
+            outline: none;
+            border-color: $color-primary2;
+        }
+
+        @include tablet {
+            width: 15rem;
+            margin-left: 8rem;
+        }
+
+        @include desktop { 
+            width: 17rem;
+            margin-left: 26.5rem;
+            margin-right: 1.5rem;
+        }
     }
 
-    &__subcontents { 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 1rem;
+    &__button-link {
+        text-decoration: none;
         width: 100%;
-    }
 
-    &__avatar { 
-        height:2.25rem;
-        width: 2.25rem;
-        border-radius: 50%;
+        @include tablet { 
+            margin-top: 0;
+            width: 9rem;
+            margin-right: 1rem;
+        }
+
+        @include desktop { 
+            width: 10.5rem;
+            margin-right: 2rem;
+        }
     }
 
     &__button { 
+        width: 100%; 
         display: flex;
         align-items: center;
-        width: 100%;
         height: 2.5rem;
         margin-top: 1rem;
         border-radius: 0.25rem;
-        background-color: #0095FF;
+        background-color: $color-primary2;
         color: white;
         border: none;
+
+        &:hover { 
+            background-color: $color-secondary2;
+        }
+
+        @include tablet { 
+            margin-top: 0;
+            margin-right: 1rem;
+        }
+
+        @include desktop { 
+            margin-right: 2rem;
+        }
     }
 
     &__button-icon { 
         width: 42%;
         text-align: left;
+
+        @include tablet {
+            width: 38%;
+        }
     }
 
     &__button-description { 
         width: 50%;
         text-align: left;
     }
-}
-
-#navinput { 
-    height: 2.5rem;
-        border: 0.0625rem solid #E1E1E1;
-        border-radius: 0.25rem;
-        width: 100%;
-        background-image: url("../../assets/icons/search.svg");
-        background-repeat: no-repeat;
-        background-position: 0.6rem;
-        padding-left: 2.5rem; 
 }
