@@ -95,6 +95,11 @@
             font-size: 1rem;
             font-weight: 600;
         }
+
+        &:focus { 
+            outline: none;
+            border-color: $color-primary2;  
+        }
         &--size {
             height: 6rem;
         }

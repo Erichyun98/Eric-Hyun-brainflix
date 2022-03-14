@@ -8,7 +8,7 @@ const CommentForm = ({ comments }) => {
             <div className="comment__submit">
                 <p className='comment__count'>{comments.length} Comments</p>
                 <div className="comment__section">
-                    <img className="comment__image" src={pic} />
+                    <img className="comment__image" src={pic} alt='avatar icon' />
                     <form className="comment__form" action="" method="">
                         <label className="comment__id" htmlFor="comment__comment">Join the Conversation</label>
                         <div className='comment__holder'>

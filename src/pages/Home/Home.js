@@ -7,8 +7,8 @@ import CommentForm from '../../components/CommentForm/CommentForm.js';
 import VideoListing from '../../components/VideoListing/VideoListing.js';
 import axios from 'axios';
 
-const apikey = "?api_key=e29626d4-08eb-4643-a573-72879dec609b"
-const apiurl = "https://project-2-api.herokuapp.com/"
+// const apikey = "?api_key=e29626d4-08eb-4643-a573-72879dec609b"
+// const apiurl = "https://project-2-api.herokuapp.com/"
 
 class Home extends Component {
 
@@ -17,9 +17,9 @@ class Home extends Component {
         currentlySelectedVideo: null
     }
 
-    componentDidMount = () => {
+    componentDidMount () {
         axios
-            .get(`${apiurl}videos${apikey}`)
+            .get('/videos')
             .then(response => {
                 this.setState({
                     videosList: response.data
@@ -38,13 +38,13 @@ class Home extends Component {
     }
     getSelectedVideo = (videoId) => {
         axios
-            .get(`${apiurl}videos/${videoId}${apikey}`)
+            .get(`/videos/${videoId}`)
             .then(response => {
                 console.log("get selected video worked!", response)
                 this.setState({
-                    currentlySelectedVideo: response.data
+                    currentlySelectedVideo: response.data     
                 });
-                console.log(response)
+                window.scrollTo(0,0)
             }) .catch(e => console.log("error"))
     };
 
